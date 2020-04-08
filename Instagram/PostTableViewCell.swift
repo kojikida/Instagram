@@ -26,20 +26,18 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    //PostDataの内容をセルに表示する
+
+    // PostDataの内容をセルに表示
     func setPostData(_ postData: PostData) {
-        //画像の表示
+        // 画像の表示
         postImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postData.id + ".jpg")
         postImageView.sd_setImage(with: imageRef)
-        
-        //キャプションの表示
+
+        // キャプションの表示
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
-
-
         
-        //日時の表示
+        // 日時の表示
         self.dateLabel.text = ""
         if let date = postData.date {
             let formatter = DateFormatter()
@@ -47,8 +45,12 @@ class PostTableViewCell: UITableViewCell {
             let dateString = formatter.string(from: date)
             self.dateLabel.text = dateString
         }
-        
-        //いいねボタンの表示
+
+        // いいね数の表示
+        let likeNumber = postData.likes.count
+        likeLabel.text = "\(likeNumber)"
+
+        // いいねボタンの表示
         if postData.isLiked {
             let buttonImage = UIImage(named: "like_exist")
             self.likeButton.setImage(buttonImage, for: .normal)
@@ -56,7 +58,5 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
-        
     }
-    
 }

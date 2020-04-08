@@ -31,7 +31,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="home" id="KbZ-9e-nVW"/>
                     <connections>
-                        <outlet property="tableView" destination="dpc-QU-BiR" id="oEr-JI-3aL"/>
+                        <outlet property="tableView" destination="dpc-QU-BiR" id="nmH-AS-dwr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2o-7U-5QI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

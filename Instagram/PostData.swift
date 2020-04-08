@@ -18,15 +18,17 @@ class PostData: NSObject {
     var isLiked: Bool = false
     
     init(document: QueryDocumentSnapshot) {
+    
         self.id = document.documentID
         
         let postDic = document.data()
         
         self.name = postDic["name"] as? String
         
-        self.caption = postDic["date"] as? String
+        self.caption = postDic["caption"] as? String
         
         let timestamp = postDic["date"] as? Timestamp
+        
         self.date = timestamp?.dateValue()
         
         if let likes = postDic["likes"] as? [String] {

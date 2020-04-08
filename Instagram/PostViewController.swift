@@ -20,15 +20,18 @@ class PostViewController: UIViewController {
     @IBAction func handlePostButton(_ sender: Any) {
         //画像をJPEG形式に変換する
         let imageData = image.jpegData(compressionQuality: 0.75)
+        
         //画像と投稿データの保存場所を定義する
         let postRef = Firestore.firestore().collection(Const.PostPath).document()
-        let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postRef.documentID + "jpg")
+        let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postRef.documentID + ".jpg")
+        
         //HUDで投稿処理中の表示を開始
         SVProgressHUD.show()
         //Storageに画像をアップロードする
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         imageRef.putData(imageData!, metadata: metadata) { (metadata, error) in
+        
             if error != nil {
                 // 画像のアップロード失敗
                 print(error!)
