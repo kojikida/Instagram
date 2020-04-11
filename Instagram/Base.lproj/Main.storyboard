@@ -7,6 +7,71 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Comment View Controller-->
+        <scene sceneID="fqe-zI-ciy">
+            <objects>
+                <viewController storyboardIdentifier="comment" id="D0Z-0m-66o" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SOI-kg-VZp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz4-mB-Q6N">
+                                <rect key="frame" x="20" y="244" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ulL-3T-gZe"/>
+                                </constraints>
+                                <state key="normal" title="投稿する" backgroundImage="btn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-tg-3Pd">
+                                <rect key="frame" x="130" y="244" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="pTK-dx-2Sh"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton:" destination="D0Z-0m-66o" eventType="touchUpInside" id="3LO-lK-RWn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメントの入力：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7B-9M-lKS">
+                                <rect key="frame" x="20" y="64" width="147" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JM-b5-eNM">
+                                <rect key="frame" x="20" y="96" width="374" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5JM-b5-eNM" secondAttribute="height" multiplier="187:64" id="g2y-7R-O32"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lz4-mB-Q6N" firstAttribute="top" secondItem="5JM-b5-eNM" secondAttribute="bottom" constant="20" id="8lw-u9-1IV"/>
+                            <constraint firstItem="l7B-9M-lKS" firstAttribute="leading" secondItem="dm5-pY-Qb3" secondAttribute="leading" constant="20" id="9HB-Wa-7qu"/>
+                            <constraint firstItem="dm5-pY-Qb3" firstAttribute="trailing" secondItem="5JM-b5-eNM" secondAttribute="trailing" constant="20" id="B5k-vl-Ivb"/>
+                            <constraint firstItem="l7B-9M-lKS" firstAttribute="top" secondItem="dm5-pY-Qb3" secondAttribute="top" constant="20" id="CfC-gL-CZn"/>
+                            <constraint firstItem="wMD-tg-3Pd" firstAttribute="centerY" secondItem="lz4-mB-Q6N" secondAttribute="centerY" id="HLe-1A-jLP"/>
+                            <constraint firstItem="5JM-b5-eNM" firstAttribute="leading" secondItem="dm5-pY-Qb3" secondAttribute="leading" constant="20" id="dON-AF-3VT"/>
+                            <constraint firstItem="lz4-mB-Q6N" firstAttribute="leading" secondItem="dm5-pY-Qb3" secondAttribute="leading" constant="20" id="kWa-t3-DUA"/>
+                            <constraint firstItem="wMD-tg-3Pd" firstAttribute="leading" secondItem="lz4-mB-Q6N" secondAttribute="trailing" constant="10" id="ryw-sl-ijT"/>
+                            <constraint firstItem="5JM-b5-eNM" firstAttribute="top" secondItem="l7B-9M-lKS" secondAttribute="bottom" constant="10" id="sI7-R2-s2C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dm5-pY-Qb3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbM-UC-Rfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1501.449275362319" y="701.78571428571422"/>
+        </scene>
         <!--ホーム-->
         <scene sceneID="8aa-Se-aPp">
             <objects>

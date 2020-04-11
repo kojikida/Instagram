@@ -41,7 +41,7 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         // Do any additional setup after loading the view.
     }
     
-    //写真を撮影/選択した時に呼ばれるメソ度
+    //写真を撮影/選択した時に呼ばれるメソッド
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if info[.originalImage] != nil {
             //撮影/選択された画像を取得する
