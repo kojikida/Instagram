@@ -91,14 +91,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
             // タップされたセルのインデックスを求める
             let touch = event.allTouches?.first
+            
             let point = touch!.location(in: self.tableView)
+            
             let indexPath = tableView.indexPathForRow(at: point)
+            
+            
 
             // 配列からタップされたインデックスのデータを取り出す
             let postData = postArray[indexPath!.row]
-
+            //print("DEBUG_PRINT: \(postData)")
+            //print("DEBUG_PRINT: \(postArray)")
+            
             // likesを更新する
             if let myid = Auth.auth().currentUser?.uid {
+                
                 // 更新データを作成する
                 var updateValue: FieldValue
                 if postData.isLiked {
@@ -111,6 +118,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 // likesに更新データを書き込む
                 let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
                 postRef.updateData(["likes": updateValue])
+                print("DEBUG_PRINT: \(postData.id)")
             }
         }
     
@@ -118,12 +126,33 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @objc func commentButton(_sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: コメントボタンがタップされました")
         
-        let storyboard: UIStoryboard = self.storyboard!
-            
-        let goComment = storyboard.instantiateViewController(withIdentifier: "comment") as! CommentViewController
-            
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        print("DEBUG_PRINT03: \(postData)")
+        
+        //postDataの情報をコメント投稿画面に移す
+        let goComment = self.storyboard?.instantiateViewController(withIdentifier: "comment") as! CommentViewController
+        
+        goComment.postDT = postData
+        
+        
         self.present(goComment, animated: true, completion: nil)
-        }
+        
+    }
+    
+            
+        
+        
+        
+        
+    
+    
     
     
     

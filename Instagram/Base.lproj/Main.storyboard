@@ -23,6 +23,9 @@
                                 <state key="normal" title="投稿する" backgroundImage="btn">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="commentButton:" destination="D0Z-0m-66o" eventType="touchUpInside" id="G9m-Dm-AsR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-tg-3Pd">
                                 <rect key="frame" x="130" y="244" width="100" height="40"/>
@@ -67,6 +70,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dm5-pY-Qb3"/>
                     </view>
+                    <connections>
+                        <outlet property="commentTextView" destination="5JM-b5-eNM" id="TzQ-Ay-oJZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbM-UC-Rfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
